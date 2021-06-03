@@ -26,11 +26,11 @@ php bin/console doctrine:migrations:migrate
 
 
 ## Configuration :
-Il est nécessaire de crée une private et public key qui permettra de signer le JWT Token.
+Il est nécessaire de créer une private et public key qui permettra de signer le JWT Token.
 
 Exemple : 
 
-Crée un dossier jwt dans dans le dossier config 
+Créer un dossier jwt dans dans le dossier config 
 
 Générer la private key :
 ```
