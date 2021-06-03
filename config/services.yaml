@@ -29,3 +29,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Listerner\AuthenticationSuccessListerner:
+        arguments: ['%lexik_jwt_authentication.token_ttl%']
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccess, priority: -2}
+
+    App\Listerner\RefreshedTokenListener:
+        arguments: ['%gesdinet_jwt_refresh_token.ttl%']
+
+    App\Listerner\RequestListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
